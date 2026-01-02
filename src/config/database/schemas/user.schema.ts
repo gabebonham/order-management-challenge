@@ -27,4 +27,4 @@ UserSchema.set('toJSON', {
     delete (ret as any)._id
   },
 })
-export default mongoose.model('User', UserSchema)
+export default UserSchema
