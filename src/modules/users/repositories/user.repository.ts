@@ -1,4 +1,3 @@
-import { CustomError } from '../../../shared/errors/custom-error'
 import User, { IUser } from '../models/user.model'
 
 export const saveUser = async (user: {

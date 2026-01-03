@@ -11,7 +11,7 @@ export const errorMiddleware = (
   if (err instanceof ZodError) {
     return res.status(400).json({
       message: 'Invalid request',
-      errors: err,
+      errors: err.issues,
     })
   }
 
