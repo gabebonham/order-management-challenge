@@ -6,6 +6,6 @@ export const saveUser = async (user: {
 }): Promise<IUser> => {
   return await User.create(user)
 }
-export const getUserByEmail = async (email: string): Promise<IUser | null> => {
+export const findUserByEmail = async (email: string): Promise<IUser | null> => {
   return await User.findOne({ email })
 }
