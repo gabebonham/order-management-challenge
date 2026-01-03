@@ -1,13 +1,15 @@
 import { CustomError } from '../../../shared/errors/custom-error'
-import { CreateUserDTO, createUserSchema } from '../dtos/create-user.dto'
+import { RegistrationDTO } from '../../auth/dtos/registration.dto'
 import User, { IUser } from '../models/user.model'
+import { getUserByEmail, saveUser } from '../repositories/user.repository'
 
-export const createUser = async (data: CreateUserDTO): Promise<IUser> => {
-  const existingUser = await User.findOne({ email: data.email })
+export const createUser = async (data: RegistrationDTO): Promise<IUser> => {
+  const existingUser = await getUserByEmail(data.email)
   if (existingUser) {
     throw new CustomError('User already exists', 400)
   }
-  return await User.create({ email: data.email, password: data.password })
+  const userToSave = { email: data.email, password: data.password }
+  return await saveUser(userToSave)
 }
 export const getUsers = async (): Promise<IUser[]> => {
   return await User.find()

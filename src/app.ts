@@ -1,23 +1,11 @@
 import express, { Request, Response } from 'express'
-import {
-  createUser,
-  getUserById,
-  getUsers,
-} from './modules/users/services/user.service'
-import { create } from 'domain'
+import { errorMiddleware } from './shared/middlewares/error-handler.middleware'
+import { authRouter } from './modules/auth/routes/auth.route'
 const app = express()
 
 app.use(express.json())
-app.get('/users', async (req: Request, res: Response) => {
-  const users = await getUsers()
-  res.json(users)
-})
-app.get('/users/:id', async (req: Request, res: Response) => {
-  const user = await getUserById(req.params.id)
-  res.json(user)
-})
-app.post('/users', async (req: Request, res: Response) => {
-  const user = await createUser(req.body)
-  res.json(user)
-})
+
+app.use('/', authRouter)
+
+app.use(errorMiddleware)
 export default app
