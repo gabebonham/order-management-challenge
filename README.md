@@ -1,9 +1,9 @@
 ## STEPS
-cp .env.example .env
-npm i
-docker compose -f docker-compose.dev.yaml up -d
-npm run dev
-npm run test:run
+- cp .env.example .env
+- npm i
+- docker compose -f docker-compose.dev.yaml up -d
+- npm run dev
+- npm run test:run
 
 ## ENDPOINTS
 ### Registration
