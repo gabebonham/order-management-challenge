@@ -44,7 +44,7 @@ Authentication: Bearer token
 ### Get Orders
 /api/orders?state=CREATED&page=1&limit=3<br>
 GET<br>
-Authentication: Bearer <token>
+Authentication: Bearer token
 ### Advance Order
 /api/orders/:id/advance<br>
 PATCH<br>
