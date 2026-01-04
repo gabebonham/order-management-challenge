@@ -27,6 +27,7 @@ POST
 ### Create Order
 /api/orders
 POST
+Authentication: Bearer <token>
 ```
 {
     "lab": "Lab",
@@ -43,6 +44,8 @@ POST
 ### Get Orders
 /api/orders?state=CREATED&page=1&limit=3
 GET
+Authentication: Bearer <token>
 ### Advance Order
 /api/orders/:id/advance
 PATCH
+Authentication: Bearer <token>
