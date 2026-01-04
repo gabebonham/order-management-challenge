@@ -7,7 +7,7 @@ export const getOrdersController = async (
   next: NextFunction,
 ) => {
   try {
-    const ordersData = await getOrders(req.query as any)
+    const ordersData = await getOrders(res.locals.query as any)
     res.status(201).json(ordersData)
   } catch (err) {
     next(err)
