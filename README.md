@@ -7,8 +7,8 @@
 
 ## ENDPOINTS
 ### Registration
-/register
-POST
+/register<br>
+POST<br>
 ```
 {
     "email":"marcelo@gmail.com",
@@ -16,8 +16,8 @@ POST
 }
 ```
 ### Login
-/login
-POST
+/login<br>
+POST<br>
 ```
 {
     "email":"marcelo@gmail.com",
@@ -25,9 +25,9 @@ POST
 }
 ```
 ### Create Order
-/api/orders
-POST
-Authentication: Bearer <token>
+/api/orders<br>
+POST<br>
+Authentication: Bearer token
 ```
 {
     "lab": "Lab",
@@ -42,10 +42,10 @@ Authentication: Bearer <token>
 }
 ```
 ### Get Orders
-/api/orders?state=CREATED&page=1&limit=3
-GET
+/api/orders?state=CREATED&page=1&limit=3<br>
+GET<br>
 Authentication: Bearer <token>
 ### Advance Order
-/api/orders/:id/advance
-PATCH
-Authentication: Bearer <token>
+/api/orders/:id/advance<br>
+PATCH<br>
+Authentication: Bearer token
